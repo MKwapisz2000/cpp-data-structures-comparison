@@ -23,7 +23,7 @@ ListaJKOG::ListaJKOG()
 // Destruktor klasy ListaJKOG
 ListaJKOG::~ListaJKOG()
 {
-    // Usuwanie wszystkich elementów z listy
+    // Usuwanie wszystkich elementÃ³w z listy
     Wezel* temp;
     while (poczatek)
     {
@@ -33,12 +33,12 @@ ListaJKOG::~ListaJKOG()
     }
 }
 
-// Dodawanie elementu na pocz¹tek listy
+// Dodawanie elementu na poczÄ…tek listy
 void ListaJKOG::dodawanie_poczatek(int wart)
 {
-    // Tworzenie nowego wêz³a
+    // Tworzenie nowego wÄ™zÅ‚a
     Wezel* nowy_wezel = new Wezel(wart);
-    // Jeœli lista jest pusta, nowy wêze³ staje siê zarówno pocz¹tkiem, jak i koñcem listy
+    // JeÅ›li lista jest pusta, nowy wÄ™zeÅ‚ staje siÄ™ zarÃ³wno poczÄ…tkiem, jak i koÅ„cem listy
     if (poczatek == nullptr)
     {
         poczatek = nowy_wezel;
@@ -46,15 +46,15 @@ void ListaJKOG::dodawanie_poczatek(int wart)
     }
     else
     {
-        // Dodawanie nowego wêz³a na pocz¹tek listy
+        // Dodawanie nowego wÄ™zÅ‚a na poczÄ…tek listy
         nowy_wezel->nastepny = poczatek;
         poczatek = nowy_wezel;
     }
-    // Zwiêkszenie rozmiaru listy
+    // ZwiÄ™kszenie rozmiaru listy
     rozmiar++;
 }
 
-// Usuwanie elementu z pocz¹tku listy
+// Usuwanie elementu z poczÄ…tku listy
 void ListaJKOG::odejmowanie_poczatek()
 {
     // Sprawdzenie, czy lista nie jest pusta
@@ -63,12 +63,12 @@ void ListaJKOG::odejmowanie_poczatek()
         return;
     }
 
-    // Jeœli lista zawiera tylko jeden element
+    // JeÅ›li lista zawiera tylko jeden element
     if (poczatek == koniec)
     {
-        // Usuniêcie jedynego elementu
+        // UsuniÄ™cie jedynego elementu
         delete poczatek;
-        // Ustawienie wskaŸników pocz¹tku i koñca na nullptr
+        // Ustawienie wskaÅºnikÃ³w poczÄ…tku i koÅ„ca na nullptr
         poczatek = nullptr;
         koniec = nullptr;
     }
@@ -76,9 +76,9 @@ void ListaJKOG::odejmowanie_poczatek()
     {
         // Zapisanie adresu pierwszego elementu
         Wezel* temp = poczatek;
-        // Przesuniêcie wskaŸnika pocz¹tku na kolejny element
+        // PrzesuniÄ™cie wskaÅºnika poczÄ…tku na kolejny element
         poczatek = poczatek->nastepny;
-        // Usuniêcie pierwszego elementu
+        // UsuniÄ™cie pierwszego elementu
         delete temp;
     }
     // Zmniejszenie rozmiaru listy
@@ -88,24 +88,24 @@ void ListaJKOG::odejmowanie_poczatek()
 // Dodawanie elementu na koniec listy
 void ListaJKOG::dodawanie_koniec(int wart)
 {
-    // Tworzenie nowego wêz³a
+    // Tworzenie nowego wÄ™zÅ‚a
     Wezel* nowy_wezel = new Wezel(wart);
-    // Jeœli lista jest pusta, nowy wêze³ staje siê zarówno pocz¹tkiem, jak i koñcem listy
+    // JeÅ›li lista jest pusta, nowy wÄ™zeÅ‚ staje siÄ™ zarÃ³wno poczÄ…tkiem, jak i koÅ„cem listy
     if (poczatek == nullptr) {
         poczatek = nowy_wezel;
         koniec = nowy_wezel;
     }
     else
     {
-        // Dodawanie nowego wêz³a na koniec listy
+        // Dodawanie nowego wÄ™zÅ‚a na koniec listy
         koniec->nastepny = nowy_wezel;
         koniec = nowy_wezel;
     }
-    // Zwiêkszenie rozmiaru listy
+    // ZwiÄ™kszenie rozmiaru listy
     rozmiar++;
 }
 
-// Usuwanie elementu z koñca listy
+// Usuwanie elementu z koÅ„ca listy
 void ListaJKOG::odejmowanie_koniec()
 {
     // Sprawdzenie, czy lista nie jest pusta
@@ -115,12 +115,12 @@ void ListaJKOG::odejmowanie_koniec()
         return;
     }
 
-    // Jeœli lista zawiera tylko jeden element
+    // JeÅ›li lista zawiera tylko jeden element
     if (poczatek == koniec)
     {
-        // Usuniêcie jedynego elementu
+        // UsuniÄ™cie jedynego elementu
         delete koniec;
-        // Ustawienie wskaŸników pocz¹tku i koñca na nullptr
+        // Ustawienie wskaÅºnikÃ³w poczÄ…tku i koÅ„ca na nullptr
         poczatek = nullptr;
         koniec = nullptr;
     }
@@ -128,16 +128,16 @@ void ListaJKOG::odejmowanie_koniec()
     {
         // Zapisanie adresu ostatniego elementu
         Wezel* temp = koniec;
-        // Przechodzenie przez listê do przedostatniego elementu
+        // Przechodzenie przez listÄ™ do przedostatniego elementu
         Wezel* obecny = poczatek;
         while (obecny->nastepny != koniec)
         {
             obecny = obecny->nastepny;
         }
-        // Ustawienie nowego koñca listy
+        // Ustawienie nowego koÅ„ca listy
         koniec = obecny;
         koniec->nastepny = nullptr;
-        // Usuniêcie ostatniego elementu
+        // UsuniÄ™cie ostatniego elementu
         delete temp;
     }
     // Zmniejszenie rozmiaru listy
@@ -147,14 +147,14 @@ void ListaJKOG::odejmowanie_koniec()
 // Dodawanie elementu w dowolne miejsce listy
 void ListaJKOG::dodawanie_dowolne(int wart, int index)
 {
-    // Sprawdzenie, czy indeks jest prawid³owy
+    // Sprawdzenie, czy indeks jest prawidÅ‚owy
     if (index < 1 || index > rozmiar + 1)
     {
         cout << "Niepoprawny indeks" << endl;
         return;
     }
 
-    // Dodawanie na pocz¹tek listy
+    // Dodawanie na poczÄ…tek listy
     if (index == 1)
     {
         dodawanie_poczatek(wart);
@@ -168,7 +168,7 @@ void ListaJKOG::dodawanie_dowolne(int wart, int index)
         return;
     }
 
-    // Tworzenie nowego wêz³a
+    // Tworzenie nowego wÄ™zÅ‚a
     Wezel* nowy_wezel = new Wezel(wart);
     Wezel* temp = poczatek;
     for (int i = 1; i < index - 1; i++)
@@ -176,31 +176,31 @@ void ListaJKOG::dodawanie_dowolne(int wart, int index)
         temp = temp->nastepny;
     }
 
-    // Wstawienie nowego wêz³a w odpowiednie miejsce listy
+    // Wstawienie nowego wÄ™zÅ‚a w odpowiednie miejsce listy
     nowy_wezel->nastepny = temp->nastepny;
     temp->nastepny = nowy_wezel;
-    // Zwiêkszenie rozmiaru listy
+    // ZwiÄ™kszenie rozmiaru listy
     rozmiar++;
 }
 
 // Usuwanie elementu z dowolnego miejsca listy
 void ListaJKOG::odejmowanie_dowolne(int index)
 {
-    // Sprawdzenie, czy indeks jest prawid³owy
+    // Sprawdzenie, czy indeks jest prawidÅ‚owy
     if (index < 1 || index > rozmiar)
     {
         cout << "Niepoprawny indeks: " << index << endl;
         return;
     }
 
-    // Usuwanie z pocz¹tku listy
+    // Usuwanie z poczÄ…tku listy
     if (index == 1)
     {
         odejmowanie_poczatek();
         return;
     }
 
-    // Usuwanie z koñca listy
+    // Usuwanie z koÅ„ca listy
     if (index == rozmiar)
     {
         odejmowanie_koniec();
@@ -214,7 +214,7 @@ void ListaJKOG::odejmowanie_dowolne(int index)
         temp = temp->nastepny;
     }
 
-    // Usuniêcie odpowiedniego elementu
+    // UsuniÄ™cie odpowiedniego elementu
     Wezel* usuwany = temp->nastepny;
     temp->nastepny = temp->nastepny->nastepny;
     delete usuwany;
@@ -228,7 +228,7 @@ void ListaJKOG::obecny_rozmiar() const
     cout << "Obecny rozmiar listy: " << rozmiar << endl;
 }
 
-// Wyœwietla zawartoœæ listy
+// Wyï¿½wietla zawartoï¿½ï¿½ listy
 void ListaJKOG::wyswietl() const
 {
     // Sprawdzenie, czy lista jest pusta
@@ -237,7 +237,7 @@ void ListaJKOG::wyswietl() const
         return;
     }
 
-    // Wyœwietlenie zawartoœci listy
+    // Wyï¿½wietlenie zawartoï¿½ci listy
     Wezel* temp = poczatek;
     cout << "POCZATEK" << endl;
     int i = 1;
@@ -250,27 +250,36 @@ void ListaJKOG::wyswietl() const
     cout << "KONIEC" << endl;
 }
 
-// Wyszukuje losowy element listy i zwraca jego wartoœæ
 int ListaJKOG::wyszukaj_losowo() const
 {
     // Inicjowanie generatora liczb pseudolosowych
     srand(time(NULL));
+
+    // Sprawdzenie, czy lista nie jest pusta
+    if (rozmiar == 0 || poczatek == nullptr) {
+        cout << "Lista jest pusta." << endl;
+        return -1;
+    }
+
     // Losowanie indeksu
     int wylosowany_index = (rand() % rozmiar) + 1;
-    // Przechodzenie przez listê do losowego elementu
+    cout << "Wylosowany indeks to: " << wylosowany_index << ", a wartoÅ›Ä‡ pod nim wynosi: ";
+
+    // Przechodzenie przez listÄ™ do losowego elementu
     Wezel* temp = poczatek;
     for (int i = 1; i < wylosowany_index; i++)
     {
         temp = temp->nastepny;
     }
-    // Zwracanie wartoœci losowego elementu
+
+    // Zwracanie wartoÅ›ci losowego elementu
     return temp->wartosc;
 }
 
 // Usuwa wszystkie elementy z listy
 void ListaJKOG::wyczysc_liste()
 {
-    // Usuwanie wszystkich elementów z listy
+    // Usuwanie wszystkich elementÃ³w z listy
     while (poczatek != nullptr)
     {
         Wezel* temp = poczatek;
