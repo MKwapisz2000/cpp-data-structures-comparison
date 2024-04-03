@@ -7,10 +7,14 @@
 using namespace std;
 
 // Konstruktor Wezla
-ListaJK::Wezel::Wezel(int w) : wartosc(w)
+ListaJK::Wezel::Wezel(int w) : wartosc(w) //konstruktor klasy Wezel, która jest zagnieżdżoną klasą w klasie ListaJK
 {
     nastepny = nullptr;
 }
+//Zagnieżdżenie klasy może pomóc w hermetyzacji kodu poprzez ograniczenie dostępu do pewnych funkcji 
+//lub danych tylko dla określonych części programu. Dzięki temu można uniknąć przypadkowego użycia 
+//lub modyfikacji tych elementów przez inne części kodu.
+
 
 // Konstruktor klasy ListaJK
 ListaJK::ListaJK()
