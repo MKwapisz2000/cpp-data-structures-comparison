@@ -124,7 +124,7 @@ int main()
 		{
 			cout << "Podaj wartosc ktora chcesz dodac: ";
 			cin >> wart;
-			TD.dodawanie_poczatek(wart); // Dodajemy funkcję z klasy TablicaDynamiczna
+			TD.dodawanie_poczatek(wart); 
 			cout << endl;
 			system("cls");
 			TD.obecny_rozmiar();
@@ -137,7 +137,7 @@ int main()
 		{
 			cout << "Podaj wartosc ktora chcesz dodac: ";
 			cin >> wart;
-			TD.dodawanie_koniec(wart); // Dodajemy funkcję z klasy TablicaDynamiczna
+			TD.dodawanie_koniec(wart); 
 			cout << endl;
 			system("cls");
 			TD.obecny_rozmiar();
@@ -148,7 +148,7 @@ int main()
 
 		case 'c':
 		{
-			TD.odejmowanie_poczatek(); // Dodajemy funkcję z klasy TablicaDynamiczna
+			TD.odejmowanie_poczatek(); 
 			cout << endl;
 			system("cls");
 			TD.obecny_rozmiar();
@@ -159,7 +159,7 @@ int main()
 
 		case 'd':
 		{
-			TD.odejmowanie_koniec(); // Dodajemy funkcję z klasy TablicaDynamiczna
+			TD.odejmowanie_koniec(); 
 			cout << endl;
 			system("cls");
 			TD.obecny_rozmiar();
@@ -172,7 +172,7 @@ int main()
 		{
 			cout << "Podaj wartosc ktora chcesz dodac oraz pozycje na ktorej ma sie znalezc: ";
 			cin >> wart >> index;
-			TD.dodawanie_dowolne(wart, index); // Dodajemy funkcję z klasy TablicaDynamiczna
+			TD.dodawanie_dowolne(wart, index); 
 			cout << endl;
 			system("cls");
 			TD.obecny_rozmiar();
@@ -185,7 +185,7 @@ int main()
 		{
 			cout << "Podaj pozycje ktora ma zostac usunieta: ";
 			cin >> index;
-			TD.odejmowanie_dowolne(index); // Dodajemy funkcję z klasy TablicaDynamiczna
+			TD.odejmowanie_dowolne(index); 
 			cout << endl;
 			system("cls");
 			TD.obecny_rozmiar();
@@ -197,9 +197,11 @@ int main()
 		case 'g':
 		{
 			cout << "Zostanie wysolowana pozycja do wyszukania." << endl;;
-			int szukana = TD.wyszukaj_losowo(); // Dodajemy funkcję z klasy TablicaDynamiczna
+			int szukana = TD.wyszukaj_losowo(); 
 			cout << szukana << endl;
 			cout << endl;
+			TD.obecny_rozmiar();
+			TD.wyswietl();
 			
 			break;
 		}
@@ -224,7 +226,7 @@ int main()
 		{
 			cout << "Podaj wartosc ktora chcesz dodac: ";
 			cin >> wart;
-			LJ.dodawanie_poczatek(wart); // Dodajemy funkcję dla listy jednokierunkowej
+			LJ.dodawanie_poczatek(wart); 
 			cout << endl;
 			system("cls");
 			LJ.obecny_rozmiar();
@@ -238,7 +240,7 @@ int main()
 		{
 			cout << "Podaj wartosc ktora chcesz dodac: ";
 			cin >> wart;
-			LJ.dodawanie_koniec(wart); // Dodajemy funkcję dla listy jednokierunkowej
+			LJ.dodawanie_koniec(wart); 
 			cout << endl;
 			system("cls");
 			LJ.obecny_rozmiar();
@@ -249,7 +251,7 @@ int main()
 
 		case 'c':
 		{
-			LJ.odejmowanie_poczatek(); // Dodajemy funkcję dla listy jednokierunkowej
+			LJ.odejmowanie_poczatek(); 
 			cout << endl;
 			system("cls");
 			LJ.obecny_rozmiar();
@@ -260,7 +262,7 @@ int main()
 
 		case 'd':
 		{
-			LJ.odejmowanie_koniec(); // Dodajemy funkcję dla listy jednokierunkowej
+			LJ.odejmowanie_koniec(); 
 			cout << endl;
 			system("cls");
 			LJ.obecny_rozmiar();
@@ -273,7 +275,7 @@ int main()
 		{
 			cout << "Podaj wartosc ktora chcesz dodac oraz pozycje na ktorej ma sie znalezc: ";
 			cin >> wart >> index;
-			LJ.dodawanie_dowolne(wart, index); // Dodajemy funkcję dla listy jednokierunkowej
+			LJ.dodawanie_dowolne(wart, index); 
 			cout << endl;
 			system("cls");
 			LJ.obecny_rozmiar();
@@ -286,7 +288,7 @@ int main()
 		{
 			cout << "Podaj pozycje ktora ma zostac usunieta: ";
 			cin >> index;
-			LJ.odejmowanie_dowolne(index); // Dodajemy funkcję dla listy jednokierunkowej
+			LJ.odejmowanie_dowolne(index); 
 			cout << endl;
 			system("cls");
 			LJ.obecny_rozmiar();
@@ -298,9 +300,12 @@ int main()
 		case 'g':
 		{
 			cout << "Zostanie wysolowana pozycja do wyszukania." << endl;;
-			int szukana = LJ.wyszukaj_losowo(); // Dodajemy funkcję dla listy jednokierunkowej
+			int szukana = LJ.wyszukaj_losowo(); 
 			cout << szukana << endl;
 			cout << endl;
+			LJ.obecny_rozmiar();
+			LJ.wyswietl();
+			
 			
 			break;
 		}
@@ -328,7 +333,7 @@ int main()
 		{
 			cout << "Podaj wartosc ktora chcesz dodac: ";
 			cin >> wart;
-			LJOG.dodawanie_poczatek(wart); // Dodajemy funkcję dla listy jednokierunkowej z głową i ogonem
+			LJOG.dodawanie_poczatek(wart); 
 			cout << endl;
 			system("cls");
 			LJOG.obecny_rozmiar();
@@ -341,7 +346,7 @@ int main()
 		{
 			cout << "Podaj wartosc ktora chcesz dodac: ";
 			cin >> wart;
-			LJOG.dodawanie_koniec(wart); // Dodajemy funkcję dla listy jednokierunkowej z głową i ogonem
+			LJOG.dodawanie_koniec(wart); 
 			cout << endl;
 			system("cls");
 			LJOG.obecny_rozmiar();
@@ -352,7 +357,7 @@ int main()
 
 		case 'c':
 		{
-			LJOG.odejmowanie_poczatek(); // Dodajemy funkcję dla listy jednokierunkowej z głową i ogonem
+			LJOG.odejmowanie_poczatek(); 
 			cout << endl;
 			system("cls");
 			LJOG.obecny_rozmiar();
@@ -363,7 +368,7 @@ int main()
 
 		case 'd':
 		{
-			LJOG.odejmowanie_koniec(); // Dodajemy funkcję dla listy jednokierunkowej z głową i ogonem
+			LJOG.odejmowanie_koniec(); 
 			cout << endl;
 			system("cls");
 			LJOG.obecny_rozmiar();
@@ -376,7 +381,7 @@ int main()
 		{
 			cout << "Podaj wartosc ktora chcesz dodac oraz pozycje na ktorej ma sie znalezc: ";
 			cin >> wart >> index;
-			LJOG.dodawanie_dowolne(wart, index); // Dodajemy funkcję dla listy jednokierunkowej z głową i ogonem
+			LJOG.dodawanie_dowolne(wart, index); 
 			cout << endl;
 			system("cls");
 			LJOG.obecny_rozmiar();
@@ -389,7 +394,7 @@ int main()
 		{
 			cout << "Podaj pozycje ktora ma zostac usunieta: ";
 			cin >> index;
-			LJOG.odejmowanie_dowolne(index); // Dodajemy funkcję dla listy jednokierunkowej z głową i ogonem
+			LJOG.odejmowanie_dowolne(index); 
 			cout << endl;
 			system("cls");
 			LJOG.obecny_rozmiar();
@@ -401,9 +406,11 @@ int main()
 		case 'g':
 		{
 			cout << "Zostanie wysolowana pozycja do wyszukania." << endl;
-			int szukana = LJOG.wyszukaj_losowo(); // Dodajemy funkcję dla listy jednokierunkowej z głową i ogonem
+			int szukana = LJOG.wyszukaj_losowo(); 
 			cout << szukana << endl;
 			cout << endl;
+			LJOG.obecny_rozmiar();
+			LJOG.wyswietl();
 			
 			break;
 		}
