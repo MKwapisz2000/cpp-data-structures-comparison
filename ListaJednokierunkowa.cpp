@@ -26,7 +26,8 @@ ListaJK::~ListaJK()
     while (poczatek != nullptr)
     {
         Wezel* temp = poczatek;
-        poczatek = poczatek->nastepny;
+        poczatek = poczatek->nastepny;  //przypisuje wskaźnikowi poczatek adres kolejnego elementu listy, 
+                                        //który jest przechowywany w polu nastepny bieżącego elementu
         delete temp;
     }
 }
