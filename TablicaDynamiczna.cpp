@@ -9,61 +9,61 @@ using namespace std;
 // Konstruktor klasy TablicaDynamiczna
 TablicaDynamiczna::TablicaDynamiczna()
 {
-    tablica = nullptr;  // Inicjowanie wskaŸnika na nullptr
-    pojemnosc = 0;      // Inicjowanie pojemnoœci tablicy na 0
+    tablica = nullptr;  // Inicjowanie wskaÅºnika na nullptr
+    pojemnosc = 0;      // Inicjowanie pojemnoÅ›ci tablicy na 0
     rozmiar = 0;        // Inicjowanie rozmiaru tablicy na 0
 }
 
 // Destruktor klasy TablicaDynamiczna
 TablicaDynamiczna::~TablicaDynamiczna()
 {
-    delete[] tablica;   // Zwolnienie pamiêci zaalokowanej dla tablicy
+    delete[] tablica;   // Zwolnienie pamiÄ™ci zaalokowanej dla tablicy
 }
 
-// Dodawanie elementu na pocz¹tek tablicy
+// Dodawanie elementu na poczÄ…tek tablicy
 void TablicaDynamiczna::dodawanie_poczatek(int wart)
 {
-    dodawanie_dowolne(wart, 0);    // Wywo³anie metody dodawania_dowolne z indeksem 0
-    if (rozmiar >= pojemnosc)      // Sprawdzenie, czy tablica nie wymaga powiêkszenia
+    dodawanie_dowolne(wart, 0);    // WywoÅ‚anie metody dodawania_dowolne z indeksem 0
+    if (rozmiar >= pojemnosc)      // Sprawdzenie, czy tablica nie wymaga powiÄ™kszenia
     {
-        powiekszTablice();         // Jeœli tak, to powiêkszenie tablicy
+        powiekszTablice();         // JeÅ›li tak, to powiÄ™kszenie tablicy
     }
 
-    // Przesuniêcie wszystkich elementów o jedn¹ pozycjê w prawo
+    // PrzesuniÄ™cie wszystkich elementÃ³w o jednÄ… pozycjÄ™ w prawo
     for (int i = rozmiar; i > 0; --i)
     {
         tablica[i] = tablica[i - 1];
     }
-    tablica[0] = wart;              // Wstawienie nowego elementu na pocz¹tek
-    rozmiar++;                      // Zwiêkszenie rozmiaru tablicy
+    tablica[0] = wart;              // Wstawienie nowego elementu na poczÄ…tek
+    rozmiar++;                      // ZwiÄ™kszenie rozmiaru tablicy
 }
 
-// Usuwanie elementu z pocz¹tku tablicy
+// Usuwanie elementu z poczÄ…tku tablicy
 void TablicaDynamiczna::odejmowanie_poczatek()
 {
     if (rozmiar >= 0) {             // Sprawdzenie, czy tablica nie jest pusta
-        // Przesuniêcie wszystkich elementów o jedn¹ pozycjê w lewo
+        // PrzesuniÄ™cie wszystkich elementÃ³w o jednÄ… pozycjÄ™ w lewo
         for (int i = 0; i < rozmiar - 1; ++i) {
             tablica[i] = tablica[i + 1];
         }
         rozmiar--;                  // Zmniejszenie rozmiaru tablicy
     }
     else {
-        cout << "Nie mo¿na usun¹æ elementu, tablica jest pusta." << endl;  // Komunikat o b³êdzie
+        cout << "Nie moÅ¼na usunÄ…Ä‡ elementu, tablica jest pusta." << endl;  // Komunikat o bÅ‚Ä™dzie
     }
 }
 
 // Dodawanie elementu na koniec tablicy
 void TablicaDynamiczna::dodawanie_koniec(int wart)
 {
-    if (rozmiar >= pojemnosc)      // Sprawdzenie, czy tablica nie wymaga powiêkszenia
+    if (rozmiar >= pojemnosc)      // Sprawdzenie, czy tablica nie wymaga powiÄ™kszenia
     {
-        powiekszTablice();         // Jeœli tak, to powiêkszenie tablicy
+        powiekszTablice();         // JeÅ›li tak, to powiÄ™kszenie tablicy
     }
-    tablica[rozmiar++] = wart;     // Dodanie nowego elementu na koniec i zwiêkszenie rozmiaru
+    tablica[rozmiar++] = wart;     // Dodanie nowego elementu na koniec i zwiÄ™kszenie rozmiaru
 }
 
-// Usuwanie elementu z koñca tablicy
+// Usuwanie elementu z koÅ„ca tablicy
 void TablicaDynamiczna::odejmowanie_koniec()
 {
     if (rozmiar >= 0)
@@ -72,7 +72,7 @@ void TablicaDynamiczna::odejmowanie_koniec()
     }
     else
     {
-        cout << "Nie mo¿na usun¹æ elementu, tablica jest pusta." << endl;  // Komunikat o b³êdzie
+        cout << "Nie moÅ¼na usunÄ…Ä‡ elementu, tablica jest pusta." << endl;  // Komunikat o bÅ‚Ä™dzie
     }
 }
 
@@ -81,22 +81,22 @@ void TablicaDynamiczna::dodawanie_dowolne(int wart, int index)
 {
     if (index < 0 || index > rozmiar)
     {
-        cout << "Niepoprawny indeks." << endl;  // Komunikat o b³êdzie
+        cout << "Niepoprawny indeks." << endl;  // Komunikat o bÅ‚Ä™dzie
         return;
     }
 
     if (rozmiar >= pojemnosc)
     {
-        powiekszTablice();         // Jeœli tablica nie ma wystarczaj¹cej pojemnoœci, to j¹ powiêksz
+        powiekszTablice();         // JeÅ›li tablica nie ma wystarczajÄ…cej pojemnoÅ›ci, to jÄ… powiÄ™ksz
     }
 
-    // Przesuniêcie wszystkich elementów o jedn¹ pozycjê w prawo
+    // PrzesuniÄ™cie wszystkich elementÃ³w o jednÄ… pozycjÄ™ w prawo
     for (int i = rozmiar; i > index; --i)
     {
         tablica[i] = tablica[i - 1];
     }
     tablica[index] = wart;          // Wstawienie nowego elementu na odpowiednie miejsce
-    rozmiar++;                      // Zwiêkszenie rozmiaru tablicy
+    rozmiar++;                      // ZwiÄ™kszenie rozmiaru tablicy
 }
 
 // Usuwanie elementu z dowolnego miejsca tablicy
@@ -104,11 +104,11 @@ void TablicaDynamiczna::odejmowanie_dowolne(int index)
 {
     if (index < 0 || index >= rozmiar)
     {
-        cout << "Niepoprawny indeks." << endl;  // Komunikat o b³êdzie
+        cout << "Niepoprawny indeks." << endl;  // Komunikat o bÅ‚Ä™dzie
         return;
     }
 
-    // Przesuniêcie wszystkich elementów o jedn¹ pozycjê w lewo
+    // PrzesuniÄ™cie wszystkich elementÃ³w o jednÄ… pozycjÄ™ w lewo
     for (int i = index; i < rozmiar - 1; ++i)
     {
         tablica[i] = tablica[i + 1];
@@ -121,32 +121,34 @@ int TablicaDynamiczna::wyszukaj_losowo() const
 {
     if (rozmiar == 0)               // Sprawdzenie, czy tablica nie jest pusta
     {
-        return -1;                  // Jeœli tak, to zwrócenie wartoœci -1
+        cout << "Tablica jest pusta." << endl;
+        return -1;                  // JeÅ›li tak, to zwrÃ³cenie wartoÅ›ci -1
     }
 
-    srand(time(nullptr));           // Inicjowanie generatora liczb pseudolosowych
-    int losowyIndex = (rand() % rozmiar);    // Losowanie indeksu
-    return tablica[losowyIndex];    // Zwracanie wartoœci losowego elementu
+    srand(time(NULL));              // Inicjowanie generatora liczb pseudolosowych
+    int losowyIndex = (rand() % rozmiar) + 1; // Losowanie indeksu
+    cout << "Wylosowany indeks to: " << losowyIndex << ", a wartoÅ›Ä‡ pod nim wynosi: ";
+    return tablica[losowyIndex - 1];    // Zwracanie wartoÅ›ci losowego elementu (indeksowanie od zera)
 }
 
-// Usuwanie wszystkich elementów z tablicy
+// Usuwanie wszystkich elementÃ³w z tablicy
 void TablicaDynamiczna::wyczysc_liste()
 {
-    delete[] tablica;               // Zwolnienie pamiêci zaalokowanej dla tablicy
-    tablica = nullptr;              // Ustawienie wskaŸnika na nullptr
-    pojemnosc = 0;                  // Resetowanie pojemnoœci tablicy
+    delete[] tablica;               // Zwolnienie pamiÄ™ci zaalokowanej dla tablicy
+    tablica = nullptr;              // Ustawienie wskaÅºnika na nullptr
+    pojemnosc = 0;                  // Resetowanie pojemnoÅ›ci tablicy
     rozmiar = 0;                    // Resetowanie rozmiaru tablicy
 }
 
 // Zwraca obecny rozmiar tablicy
 void TablicaDynamiczna::obecny_rozmiar() const
 {
-    cout << "Obecny rozmiar listy: " << rozmiar << endl;  // Zwracanie wartoœci rozmiaru tablicy
+    cout << "Obecny rozmiar listy: " << rozmiar << endl;  // Zwracanie wartoÅ›ci rozmiaru tablicy
 }
                   
 
 
-// Wyœwietla zawartoœæ tablicy
+// WyÅ›wietla zawartoÅ›Ä‡ tablicy
 void TablicaDynamiczna::wyswietl() const
 {
     if (rozmiar == 0)               // Sprawdzenie, czy tablica jest pusta
@@ -155,37 +157,37 @@ void TablicaDynamiczna::wyswietl() const
         return;
     }
 
-    cout << "POCZATEK" << endl;     // Wyœwietlenie informacji o pocz¹tku tablicy
-    for (int i = 0; i < rozmiar; ++i)   // Przejœcie przez wszystkie elementy tablicy
+    cout << "POCZATEK" << endl;     // WyÅ›wietlenie informacji o poczÄ…tku tablicy
+    for (int i = 0; i < rozmiar; ++i)   // PrzejÅ›cie przez wszystkie elementy tablicy
     {
-        cout << i+1<<".) "<<tablica[i] << endl;    // Wyœwietlenie wartoœci elementu
+        cout << i+1<<".) "<<tablica[i] << endl;    // WyÅ›wietlenie wartoÅ›ci elementu
     }
-    cout << "KONIEC" << endl;       // Wyœwietlenie informacji o koñcu tablicy
+    cout << "KONIEC" << endl;       // WyÅ›wietlenie informacji o koÅ„cu tablicy
 }
 
-// Powiêksza tablicê dwukrotnie
+// PowiÄ™ksza tablicÄ™ dwukrotnie
 void TablicaDynamiczna::powiekszTablice()
 {
-    int nowaPojemnosc;              // Zmienna przechowuj¹ca now¹ pojemnoœæ tablicy
+    int nowaPojemnosc;              // Zmienna przechowujÄ…ca nowÄ… pojemnoÅ›Ä‡ tablicy
     if (pojemnosc == 0)             // Sprawdzenie, czy tablica jest pusta
     {
-        nowaPojemnosc = 1;          // Jeœli tak, to nowa pojemnoœæ wynosi 1
+        nowaPojemnosc = 1;          // JeÅ›li tak, to nowa pojemnoÅ›Ä‡ wynosi 1
     }
     else
     {
-        nowaPojemnosc = 2 * pojemnosc; // Jeœli nie, to nowa pojemnoœæ wynosi dwukrotnoœæ obecnej pojemnoœci
+        nowaPojemnosc = 2 * pojemnosc; // JeÅ›li nie, to nowa pojemnoÅ›Ä‡ wynosi dwukrotnoÅ›Ä‡ obecnej pojemnoÅ›ci
     }
 
-    // Utworzenie nowej tablicy o wiêkszej pojemnoœci
+    // Utworzenie nowej tablicy o wiÄ™kszej pojemnoÅ›ci
     int* nowaTablica = new int[nowaPojemnosc];
 
-    // Skopiowanie zawartoœci starej tablicy do nowej
+    // Skopiowanie zawartoÅ›ci starej tablicy do nowej
     for (int i = 0; i < rozmiar; ++i)
     {
         nowaTablica[i] = tablica[i];
     }
 
-    delete[] tablica;               // Zwolnienie pamiêci zaalokowanej dla starej tablicy
-    tablica = nowaTablica;          // Ustawienie wskaŸnika na now¹ tablicê
-    pojemnosc = nowaPojemnosc;      // Zaktualizowanie pojemnoœci tablicy
+    delete[] tablica;               // Zwolnienie pamiÄ™ci zaalokowanej dla starej tablicy
+    tablica = nowaTablica;          // Ustawienie wskaÅºnika na nowÄ… tablicÄ™
+    pojemnosc = nowaPojemnosc;      // Zaktualizowanie pojemnoÅ›ci tablicy
 }
