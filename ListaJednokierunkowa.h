@@ -1,21 +1,18 @@
 #pragma once
-#pragma once
 #include <iostream>
 
 
 class ListaJK 
 {
 private:
-    class Wezel
+    class Wezel  //Wezel jest prywatną klasą zagnieżdżoną w klasie ListaJK, co oznacza, że jest ona dostępna tylko dla innych elementów klasy ListaJK.
     {
     public:
         Wezel(int w);
         int wartosc;
         Wezel* nastepny;
-
-      
-
     };
+
     Wezel* poczatek;
     int rozmiar;
 
